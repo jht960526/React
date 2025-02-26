@@ -1,10 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 
-function Header(){
-  return <header>
-    <h1><a href="/">React</a></h1>
-  </header>
+function Header(props){
+  console.log('props', props);
+  return (
+  <header>
+    <h1><a href="/">{props.title}</a></h1>
+  </header>);
 }
 
 function Nav(){
@@ -17,23 +19,29 @@ function Nav(){
   </nav>
 }
 
-function Article(){
-  return <article>
-    <h2>Welcome</h2>
-    Hello, React
+function Article(props){
+  return (
+    <article>
+    <h2>{props.title}</h2>
+    {props.body}
   </article>
+  );
 }
 
 function App() {
+  const topics = [
+   {id:1, title:'html', body:'html is ...'},
+   {id:2, title:'css', body:'css is ...'},
+   {id:3, title:'JavaScript', body:'JavaScript is ...'}   
+  ]
+  
   return (
-    
-    <div className="App">
-      <Header></Header>
-      <Header></Header>
-      <Header></Header>
 
-      <Nav></Nav>
-    <Article></Article>
+    <div className="App">
+      <Header title = "Web"></Header>
+      <Nav topics = "topics"></Nav>
+    <Article title = "Welcome" body="Hello, Web"></Article>
+    
     </div>
   );
 }
