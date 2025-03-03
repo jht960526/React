@@ -1,23 +1,28 @@
 import { Fragment, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-
+import Item from "./Item";
+import Mailbox from './Mailbox';
+import Fruits from './Fruits';
 
 function App() {
-const detinations = [
-  {
-    place: "파리",
-    destination: "에펠탑과 카페페가 있는 도시시",
-  },
-];
+const fruits = ["Apple"];
   return (
     <div>
-      <Container>여행지역</Container>
-      <Destination place={"파리"} destination={'에펠탑과 카페가 있는도시'}/>
-    <Destination {...destination[0]}/>
-    <Destination {...destination[0]}/>
+      <Item isDone = {true}/>
+      <Item isDone={false}/>
+      <Mailbox unreadMessage={["h1"]}/>
+      <Mailbox unreadMessage={[]}/>
+     {fruits.length > 0 && <Fruits fruits={fruits}/>}
+      
     </div>
   );
 }
 
 export default App
+
+
+/*
+<Fruits fruits={["Apple"]} />
+<Fruits fruits={[]}/>
+*/
