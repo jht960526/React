@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import { FilteredList } from './List';
+import List from './List';
 
 function Header(props){
   console.log('props', props);
@@ -37,11 +39,9 @@ function App() {
   
   return (
 
-    <div className="App">
-      <Header title = "Web"></Header>
-      <Nav topics = "topics"></Nav>
-    <Article title = "Welcome" body="Hello, Web"></Article>
-    
+    <div>
+      <List/>
+      <FilteredList/>
     </div>
   );
 }
