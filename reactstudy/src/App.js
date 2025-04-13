@@ -3,6 +3,7 @@ import './App.css';
 import { FilteredList } from './List';
 import List from './List';
 import Alert from './Alert';
+import Form from './Form';
 
 function Header(props){
   console.log('props', props);
@@ -43,7 +44,9 @@ function App() {
     <div>
       <List/>
       <FilteredList/>
+      {/* SyntheticEvent */}
       <Alert onAlert={()=> alert("world")}/>
+      <Form/>
     </div>
   );
 }
