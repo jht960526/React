@@ -1,8 +1,8 @@
-const Alert = () =>{
-  const handleClick = () => alert("Hello");
+const Alert = ({onAlert}) =>{
+
   return (
     <div>
-      <button onClick={handleClick}>Click</button>
+      <button onClick={onAlert}>Click</button>
     </div>
   );
 }

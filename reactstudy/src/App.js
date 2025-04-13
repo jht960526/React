@@ -43,7 +43,7 @@ function App() {
     <div>
       <List/>
       <FilteredList/>
-      <Alert/>
+      <Alert onAlert={()=> alert("world")}/>
     </div>
   );
 }
