@@ -4,6 +4,7 @@ import { FilteredList } from './List';
 import List from './List';
 import Alert from './Alert';
 import Form from './Form';
+import Propagation from './Propagation';
 
 function Header(props){
   console.log('props', props);
@@ -47,6 +48,7 @@ function App() {
       {/* SyntheticEvent */}
       <Alert onAlert={()=> alert("world")}/>
       <Form/>
+      <Propagation/>
     </div>
   );
 }
