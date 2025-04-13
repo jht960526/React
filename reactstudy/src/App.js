@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { FilteredList } from './List';
 import List from './List';
+import Alert from './Alert';
 
 function Header(props){
   console.log('props', props);
@@ -42,6 +43,7 @@ function App() {
     <div>
       <List/>
       <FilteredList/>
+      <Alert/>
     </div>
   );
 }
