@@ -8,9 +8,9 @@ function Counter(){
       State: {count}
       <button onClick = {()=>{
           // 0 > 1 > 2 > 3
-          setCount(count + 1); // 1
-          setCount(count + 1); // 1
-          setCount(count + 1); // 1
+          setCount((pre) => pre + 1); // 1
+          setCount((pre) => pre + 1); // 1
+          setCount((pre) => pre + 1); // 1
         }}
         > 
         update
