@@ -1,38 +1,29 @@
 import { useState } from 'react'
 import './App.css'
 
-function Counter(){
-  const [count, setCount] = useState(0);
-  return(
-    <div>
-      State: {count}
-      <button onClick = {()=>{
-          // 0 > 1 > 2 > 3
-          setCount(count + 1); // 1
-          setTimeout(()=>{
-            // 0
-            alert(count); // 1
-          },1000);
-        }}
-        > 
-        update
-      </button>
-    </div>
-  );
-}
+
 
 function App() {
-  const [count, setCount] = useState(0);
-  const handleUpdate = () =>{
-    setCount(count + 1);
+  const product = {
+    name : "99cm",
+    price: 3000,
+    category:{
+      id: 1,
+    },
   };
+  const [list,setList] = useState([]);
+  function handleCreate(input){
+    setList((pre)=>pre.concat(input));
+  }
+
+  function handleUpdate(input){
+    setList((pre)=>pre.map((i) => (i.id === input.id ? input : i)));
+  }
+
   return (
-    <div>
-      {/* State: {count}
-      <button onClick={handleUpdate}>Update</button> */}
-      <Counter/>
-      </div>
+    <div>App</div>
   )
 }
+
 
 export default App
