@@ -1,29 +1,14 @@
 import { useReducer, useState } from 'react'
 import './App.css'
+import { MyComponent, MyProvider } from './MyConponent';
 
 function App() {
-  const user = {
-    name: "chelsu",
-  };
-
   return(
     <div>
-      <Child user = {user}/>
+      <MyProvider>
+        <MyComponent/>
+      </MyProvider>
     </div>
-  );
-}
-
-function Parent({user}){
-  return (
-    <div>
-      <Child user={user}/>
-    </div>
-  );
-}
-
-function Child({user}){
-  return (
-    <div>{user.name}</div>
   );
 }
 
