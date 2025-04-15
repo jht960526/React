@@ -1,27 +1,33 @@
-import { useState } from 'react'
+import { useReducer, useState } from 'react'
 import './App.css'
 
+const initial = {count: 0};
+
+const reducer = (state,action) => {
+  switch (action.type){
+    case "INCREASE": {
+      return { count : state.count + 1};
+    }
+
+    case "DECREASE":{
+      return { count : state.count - 1};
+    }
+
+    default: {
+      throw new Error("invalid type: " + action.type);
+    }
+  }
+};
 
 
 function App() {
-  const product = {
-    name : "99cm",
-    price: 3000,
-    category:{
-      id: 1,
-    },
-  };
-  const [list,setList] = useState([]);
-  function handleCreate(input){
-    setList((pre)=>pre.concat(input));
-  }
-
-  function handleUpdate(input){
-    setList((pre)=>pre.map((i) => (i.id === input.id ? input : i)));
-  }
-
+  const [state,dispatch] = useReducer(reducer,initial);
   return (
-    <div>App</div>
+    <div>
+      <h1>count: {state.count}</h1>
+      <button onClick={() => dispatch({type: "INCREASE"})}>+</button>
+      <button onClick={() => dispatch({type: "DECREASE"})}>-</button>
+    </div>
   )
 }
 
