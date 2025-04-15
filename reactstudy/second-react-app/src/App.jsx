@@ -1,13 +1,14 @@
 import { useReducer, useState } from 'react'
 import './App.css'
 import { MyComponent, MyProvider } from './MyConponent';
+import { ThemeComponent, ThemeProvider } from './Theme';
 
 function App() {
   return(
     <div>
-      <MyProvider>
-        <MyComponent/>
-      </MyProvider>
+      <ThemeProvider>
+        <ThemeComponent/>
+      </ThemeProvider>
     </div>
   );
 }
