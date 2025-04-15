@@ -3,6 +3,20 @@ import './App.css'
 import { MyComponent, MyProvider } from './MyConponent';
 import { ThemeComponent, ThemeProvider } from './Theme';
 
+function FocusInput(){
+  const inputRef = useRef(null);
+
+  const handleClick = () =>{
+    inputRef.current.focus();
+  };
+  return(
+    <div>
+      <input type="text" ref={inputRef}/>
+      <button onClick={handleClick}>Focus</button>
+    </div>
+  );
+}
+
 function App() {
   const [seconds, setSeconds] = useState(0);
   const timeRef = useRef(null);
@@ -23,6 +37,9 @@ function App() {
       <h1>Timer: {seconds}</h1>
       <button onClick={handleStart}>Start</button>
       <button onClick={handleEnd}>End</button>
+
+      <FocusInput/>
+
     </div>
   );
 }
