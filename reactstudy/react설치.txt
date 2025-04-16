@@ -1,0 +1,39 @@
+mkdir npm-commend
+> commend 파일을 생성
+
+code npm-commend
+> commend라는 폴더 열기
+
+npm init
+> 새로운 패키지를 초기화하고 설정하는데 사용된다.
+
+npm -commend
+> .json 파일을 생성한다. package json 파일은 프로젝트의 메타데이터와 의존성 정보를 담고 있다.
+
+npm install
+> npm을 설치한다. 특정 버전을 설치하고 싶으면 react@버전명을 쓰면 된다.
+
+npm run
+> package.json안에 있는 script 명령어들을 실행시킬 수 있음
+
+npm install --save-dev eslint
+
+vite
+> 프로젝트를 생성해주는 프레임 워크 툴이다.
+> npm create vite@latest
+
+-----
+React 컴포넌트 작성 State
+state는 현재 컴포넌트의 데이터를 말한다.
+
+useReducer : useState와 같이 상태를 관리하는 훅
+스테이트 형태가 복잡할 때 또는 업데이트하는 로직을 분리하여 한 곳에 오고 싶을 때 주로 사용한다.
+업데이트하는 로직을 한눈에 보기 쉽게 표현하기 위해서 사용한다.
+1. 초기 상태를 정의한다.
+2. 사용한다.
+
+context API
+
+useRef
+특정 동요소를 조작할 때 값을 저장하지만 렌더링이 다시 필요하지 않을 때, 사용한다.
+특정 속성을 읽고 수정할 수 있는 단순한 개체이다.
