@@ -12,16 +12,17 @@ function Basic(){
   return <div>Hello world</div>
 }
 
-function Update(){
+function Update(props){
   const [state,setState] = useState(0);
+  const ref = useRef(0);
   useEffect(()=>{
     console.log("update",state);
-  },[state]);
+  },[ref.current]);
 
   return (
     <div>
       <h1>state: {state}</h1>
-      <button onClick={()=>setState((pre)=>pre+1)}>Click</button>
+      <button onClick={()=>(ref.current += 1)}>Click</button>
     </div>
   );
 }
