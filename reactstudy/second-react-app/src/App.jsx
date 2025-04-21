@@ -27,12 +27,29 @@ function Update(props){
   );
 }
 
+function CleanUp(){
+  const [seconds,setSeconds] =useState(0);
+  useEffect(()=>{
+    const timerId = setInterval(()=>{
+      setSeconds((pre)=>pre+1);
+    },1000);
+    return () => {
+      console.log("clean");
+      clearInterval(timerId);
+    }
+  },[]);
+
+  return <div>Seconds: {seconds}</div>
+}
+
 function App() {
-  
+  const [isShow, setIsShow] = useState(false);
   return(
     <div>
       <Basic/>
       <Update/>
+      {isShow && <CleanUp/>}
+      <button onClick={() => setIsShow((pre) => !pre)}>Click</button>
     </div>
   );
 }
