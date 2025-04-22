@@ -1,7 +1,7 @@
-import "./Layout.css";
+import './Layout.css'
 
-function LayOut({children}){
-    return <div className="layout">{children}</div>
+function LayOut({ children }) {
+    return <div className='layout'>{children}</div>
 }
 
-export default LayOut;
+export default LayOut

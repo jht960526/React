@@ -1,4 +1,4 @@
-.todo-item{
+.todo-item {
     display: flex;
     align-items: center;
     height: 65px;
@@ -6,11 +6,15 @@
     padding: 0 12px;
 }
 
-.todo-item-text{
+.todo-item-text {
     flex-grow: 1;
 }
 
-.todo-item-button{
+.todo-item-text.completed {
+    text-decoration: line-through;
+}
+
+.todo-item-button {
     width: 30px;
     height: 30px;
     background-color: black;
@@ -18,7 +22,7 @@
     border: none;
 }
 
-.todo-item-checkbox{
+.todo-item-checkbox {
     width: 16px;
     height: 16px;
 }
