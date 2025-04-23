@@ -7,6 +7,7 @@ function TodoList({
     onToggleAll,
     onDelete,
     onDeleteCompleted,
+    onUpdate,
 }) {
     const isAllCompleted =
         data.length > 0 && data.every((item) => item.completed)
@@ -32,10 +33,12 @@ function TodoList({
             <div>
                 {data.map((item) => (
                     <TodoItem
+                        id={item.id}
                         text={item.text}
                         completed={item.completed}
                         onToggle={() => onToggle(item.id)}
                         onDelete={() => onDelete(item.id)}
+                        onUpdate={onUpdate}
                     />
                 ))}
             </div>
