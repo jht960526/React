@@ -33,6 +33,7 @@ function TodoList({
             <div>
                 {data.map((item) => (
                     <TodoItem
+                        key={item.id}
                         id={item.id}
                         text={item.text}
                         completed={item.completed}
